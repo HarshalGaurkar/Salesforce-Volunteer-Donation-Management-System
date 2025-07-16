@@ -1,162 +1,180 @@
-Here’s a complete **`README.md`** file for your **Salesforce Volunteer & Donation Management System** project. You can copy this into your GitHub repository directly.
+Here is a professional and visually structured `README.md` file for your **Salesforce Nonprofit Volunteer & Donation Management System** project. You can copy this into your GitHub repository:
 
 ---
 
-```markdown
-# 🧡 Salesforce Volunteer & Donation Management System
+````markdown
+# 🌟 Nonprofit Volunteer & Donation Management System (NVDMS)
 
-A complete Salesforce application to manage volunteers, donation records, and nonprofit events. Built with Lightning Web Components (LWC), Flows, and core Salesforce features.
-
----
-
-## 📌 Project Overview
-
-This project is designed for **nonprofit organizations** to:
-
-- Manage **volunteers** and track their hours.
-- Organize **volunteer events** and allow sign-ups.
-- Track **donations** from individuals or organizations.
-- Assign **donor tiers** (Bronze, Silver, Gold, Platinum).
-- Provide dashboards for Admins to monitor all activity.
+A comprehensive Salesforce Nonprofit Cloud project to manage Donors, Donations, Volunteer Activities, Events, Bonus Rewards, Campaigns, and more. Built with Lightning Web Components, Apex, Flows, and Experience Cloud.
 
 ---
 
-## 🔧 Features
-
-### ✅ Volunteer Management
-- Volunteer registration via LWC form
-- Volunteer event listing and sign-up
-- Volunteer hour tracking & participation status
-- Volunteer badges/certificates (optional)
-
-### 💸 Donation Management
-- Donation form with donor info
-- Auto assignment of Donor Tiers based on donation amount
-- Thank you email after donation
-- Donation receipt (optional PDF)
-
-### 📆 Event Management
-- Create/edit volunteer events
-- View volunteers registered per event
-- Cancel events and auto-notify volunteers
-
-### 📊 Admin Dashboard
-- Total donations by month
-- Donor tier breakdown
-- Top donors
-- Total volunteer hours
-- Upcoming events
+## 📌 Table of Contents
+- [Features](#features)
+- [Data Model](#data-model)
+- [Expanded Functionality](#expanded-functionality)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🧱 Data Model
+## 🚀 Features
 
-### Custom Objects
-
-| Object Name              | Description                                      |
-|--------------------------|--------------------------------------------------|
-| Volunteer                | Stores volunteer details                         |
-| Volunteer Event          | Stores event details requiring volunteers        |
-| Volunteer Participation  | Junction object linking Volunteer & Event        |
-| Donor                    | Stores donor information                         |
-| Donation                 | Tracks donation transactions                     |
-| Donor Tier (Optional)    | Metadata for donor level (Bronze, Gold, etc.)    |
-| Event (Optional)         | Common wrapper for donation or volunteer events  |
-
----
-
-## ⚙️ Tools & Technologies
-
-- Salesforce Lightning Platform
-- Lightning Web Components (LWC)
-- Flows & Email Alerts
-- Apex (optional triggers)
-- Reports & Dashboards
-- (Optional) Experience Cloud for public portals
+| Module | Functionality |
+|--------|---------------|
+| 🧍 Donor Management | Register donors, track donations, assign bonus points |
+| 💰 Donation Tracking | Record donation history, generate receipts, donor tiers |
+| 🎖️ Bonus Program | Auto-calculate points, tier upgrades, recognitions |
+| 🤝 Volunteer Management | Register volunteers, track hours, schedule shifts |
+| 📆 Event Management | Create/manage volunteering or fundraising events |
+| 📄 Receipt Generator | Auto-send donation PDF receipts |
+| 🧑‍💻 Experience Cloud Portal | Donor & Volunteer self-service portal |
+| 📊 Reports & Dashboards | Trends, impact tracking, leaderboard, summaries |
+| 📢 Campaign Management | Run email/WhatsApp outreach campaigns |
+| 🔒 Secure Access | Profiles, permission sets, record-level visibility |
 
 ---
 
-## 📂 Folder Structure
+## 🧩 Data Model
 
-```
-force-app/
-├── main/
-│   └── default/
-│       ├── lwc/
-│       │   ├── volunteerSignupForm/
-│       │   ├── donationForm/
-│       │   └── dashboardComponent/
-│       ├── objects/
-│       │   ├── Volunteer__c/
-│       │   ├── Volunteer_Event__c/
-│       │   ├── Donation__c/
-│       │   └── Donor__c/
-│       ├── flows/
-│       │   ├── AssignDonorTier.flow
-│       │   └── SendThankYou.flow
-│       └── aura/ (if needed)
-```
+### 🔹 Custom Objects
+
+- **Donor__c**: Contact details, bonus points, donor tier
+- **Donation__c**: Amount, date, mode, donor relation
+- **Volunteer__c**: Contact info, availability, total hours
+- **Volunteer_Activity__c**: Logs hours, event, feedback
+- **Volunteer_Shift__c**: Shift scheduling, capacity limits
+- **Event__c**: Event name, location, date, type
+- **Program__c**: Nonprofit initiative linked to donations
+- **Beneficiary__c**: Person impacted by donation/program
 
 ---
 
-## 🚀 Deployment Instructions
+## ✨ Expanded Functionality
 
-### 1. **Clone the repo**
+### 🎁 Bonus Reward Automation
+- Points based on donation amount
+- Auto-tier assignment: Bronze, Silver, Gold
+- QR certificate with bonus summary
+
+### 🧑‍🤝‍🧑 Volunteer Shift Management
+- Time-slot based registration
+- Capacity limits with real-time conflict checks
+- Shift reminders via Flow
+
+### 📄 PDF Receipt Generator
+- Auto-generate and email receipts after each donation
+- Available for download on portal
+
+### 🌐 Donor & Volunteer Portal
+- Built using Experience Cloud
+- View history, edit profile, sign up for events
+
+### 🧮 Program & Beneficiary Mapping
+- Connect donations to real-world programs and people
+- Show transparency and impact tracking
+
+### 📢 Campaign Outreach
+- Campaign record tracking
+- Send bulk emails and alerts
+- RSVP handling
+
+### 🧠 Gamification (Optional)
+- Volunteer badges
+- Donor leaderboards
+- Tier-based incentives
+
+---
+
+## 🛠️ Tech Stack
+
+- **Platform**: Salesforce Nonprofit Cloud
+- **Frontend**: Lightning Web Components (LWC)
+- **Backend**: Apex Triggers, Classes
+- **Automation**: Flows, Workflow Rules, Scheduled Jobs
+- **Integration**: REST APIs (Twilio, Razorpay, QR code)
+- **Deployment**: SFDX CLI, GitHub
+- **Portal**: Experience Cloud
+
+---
+
+## 🧪 Installation & Setup
+
+### Prerequisites
+- Salesforce CLI
+- VS Code with Salesforce Extensions
+- Scratch Org or Sandbox
+
+### Setup Steps
+
 ```bash
-git clone https://github.com/yourusername/volunteer-donation-management.git
-cd volunteer-donation-management
-```
+# 1. Clone the repo
+git clone https://github.com/your-username/nonprofit-volunteer-donation-system.git
+cd nonprofit-volunteer-donation-system
 
-### 2. **Authorize Org**
-```bash
-sfdx auth:web:login
-```
+# 2. Authenticate your DevHub
+sfdx auth:web:login -a DevHub
 
-### 3. **Deploy to Org**
-```bash
-sfdx force:source:deploy -p force-app
-```
+# 3. Create a Scratch Org
+sfdx force:org:create -s -f config/project-scratch-def.json -a NVDMS
 
-### 4. **Assign Permission Set (if created)**
-```bash
-sfdx force:user:permset:assign -n Volunteer_Donation_User
-```
+# 4. Push metadata
+sfdx force:source:push
 
-### 5. **Import Sample Data (Optional)**
-```bash
-sfdx force:data:tree:import -p ./data/sample-data-plan.json
-```
+# 5. Assign permission sets
+sfdx force:user:permset:assign -n NonprofitAccess
+
+# 6. Open the org
+sfdx force:org:open
+````
 
 ---
 
-## 💡 Future Enhancements
-- Public portal using Experience Cloud
-- QR code-based volunteer event check-in
-- Gamification (volunteer badges/leaderboard)
-- WhatsApp/email integrations for reminders
+## 📸 Screenshots (Optional)
+
+> *Add GIFs or screenshots of:*
+
+* Volunteer Shift LWC
+* Bonus Tier Auto Update
+* Receipt Generator
+* Experience Cloud Portal
+* Dashboards
 
 ---
 
-## 👤 Author
+## 🤝 Contributing
 
-**Harshal Gaurkar**  
-Salesforce Developer | LWC Specialist  
-📧 [YourEmail@example.com]  
-🔗 [LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
+Pull requests are welcome. For major changes, please open an issue first to discuss the proposed updates.
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## 🙌 Acknowledgements
+
+* Salesforce.org Nonprofit Success Pack (NPSP)
+* Trailhead Resources
+* Open Source Donor Projects
+
+---
 
 ```
 
 ---
 
-Let me know if you want:
-- Sample LWC code linked here
-- JSON for sample data upload
-- Custom permission set export
+### ✅ What You Can Do Next
 
-I'll help you complete your GitHub setup!
+Would you like me to:
+- Generate all the object metadata (`.object-meta.xml`, fields, etc.)?
+- Give you the `Apex`, `LWC`, and `Flow` templates?
+- Export this into a ready-to-use GitHub ZIP structure?
+
+Let me know and I’ll generate the next piece for you.
+```
